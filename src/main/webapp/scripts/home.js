@@ -24,11 +24,11 @@ function onSign()
 
 
 
-function retrieveSignature(){
+function retrieveSignature2(){
 	debugger;
 	var canvas = document.getElementById("sigcanvas");
 //	alert('it works'+canvas);
-	var imgURL    = canvas.toDataURL("image/png");
+	var imgURL    = canvas.toDataURL();
 	//alert('it works'+imgURL);
 
 	
@@ -44,4 +44,17 @@ function retrieveSignature(){
 		  }
 		});
 	
+}
+
+
+
+function retrieveSignature(){
+	var canvasServer = document.getElementById("sigcanvas");
+    var context = canvasServer.getContext("2d");                    
+    var imageDataURL = canvasServer.toDataURL('image/png');
+    var ajax = new XMLHttpRequest();
+    ajax.open("POST","imageservlet",false);
+    ajax.setRequestHeader("Content-Type", "application/upload");
+    ajax.send(imageDataURL);
+
 }
