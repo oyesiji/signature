@@ -21,7 +21,7 @@ function onSign()
    ClearTablet();
    tmr = SetTabletState(1, ctx, 50) || tmr;
    tmr = SetTabletState(1, ctx, 50) || tmr;
-   alert(tmr);
+  // alert(tmr);
 }
 
 
