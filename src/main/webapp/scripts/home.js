@@ -10,19 +10,31 @@ function buttonClicked(){
 	document.write('<img src="'+img+'"/>');
 }
 
-
+var tmr;
 function onSign()
 {
-	debugger;
+//	clearSignature();
    var ctx = document.getElementById('sigcanvas').getContext('2d');         
-   SetDisplayXSize( 500 );
+   SetDisplayXSize(500);
    SetDisplayYSize( 100 );
    SetJustifyMode(0);
    ClearTablet();
    tmr = SetTabletState(1, ctx, 50) || tmr;
+   tmr = SetTabletState(1, ctx, 50) || tmr;
+   alert(tmr);
 }
 
 
+function clearSignature(){
+	ClearTablet();
+	setTabletState(0,tmr);
+}
+
+
+function closingSigWeb(){
+	ClearTablet();
+	SetTabletState(0,tmr);
+ 	}
 
 function retrieveSignature2(){
 	debugger;
